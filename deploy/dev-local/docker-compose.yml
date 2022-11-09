@@ -1,0 +1,44 @@
+version: "3.6"
+services:
+  redis-server:
+    image: redis
+    volumes:
+      - ./data:/data
+    ports:
+      - 6379:6379
+
+  db:
+    container_name: db
+    image: mysql:8.0
+    restart: always
+    volumes:
+      - ./db.sql:/docker-entrypoint-initdb.d/db.sql
+    environment:
+      MYSQL_DATABASE: root
+      MYSQL_ROOT_PASSWORD: 11111111
+      MYSQL_ROOT_HOST: mysql
+    ports:
+      - 3306:3306
+
+  server:
+    build:
+      context: ../../server
+      dockerfile: ../deploy/dev-local/server.Dockerfile
+    image: dev-server:latest
+    restart: always
+    ports:
+      - "4000:4000"
+
+  web:
+    build:
+      context: ../../web
+      dockerfile: ../deploy/dev-local/web.Dockerfile
+    image: dev-web:latest
+    depends_on:
+      - server
+    restart: always
+    ports:
+      - "8080:8080"
+
+volumes:
+  db_data:

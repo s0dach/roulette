@@ -1,0 +1,190 @@
+@import "~@/assets/css/colors.scss";
+@import "~@/assets/css/mixins.scss";
+
+.button {
+  display: inline-block;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  height: 40px;
+  line-height: 40px;
+  white-space: nowrap;
+  font-size: 12px;
+  color: #41485d;
+  background-color: rgb(14, 21, 41);
+  padding: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.05s, color 0.05s;
+  &:hover {
+    background-color: rgb(27, 36, 60);
+    color: #fff;
+  }
+
+  &--pay {
+    background-color: #19af60;
+    color: #fff;
+    padding: 0 15px;
+    &:hover {
+      background-color: #1fd978;
+    }
+    .icon--pay {
+      margin-right: 8px;
+    }
+  }
+
+  &--pay-mobile {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  &--logout {
+    width: 40px;
+    &:hover {
+      .icon--logout {
+        background: url("~@/assets/icons/icon-logout-hover.png") center no-repeat;
+      }
+    }
+  }
+
+  &--select-all {
+    height: 30px;
+    line-height: 30px;
+    padding: 0 17px;
+  }
+
+  &--inventory {
+    width: 100%;
+    font-size: 14px;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    .icon {
+      top: -3px;
+    }
+  }
+
+  &--inventory-full {
+    justify-content: center;
+  }
+
+  &--inventory-active {
+    background: $bluer-color;
+    color: #fff;
+    &:hover {
+      background: $bluer-color-hover;
+      color: #fff;
+    }
+
+    .icon--exchange {
+      background: url("~@/assets/icons/icon-exchange-hover.png") center no-repeat;
+    }
+    .icon--pick {
+      background: url("~@/assets/icons/icon-pick-hover.png") center no-repeat;
+    }
+  }
+
+  &--auth {
+    background: #19af60;
+    color: #fff;
+    padding: 0 24px;
+    margin-left: auto;
+    &:hover {
+      background-color: #1fd978;
+      color: #fff;
+    }
+    .icon {
+      margin-left: 10px;
+    }
+  }
+
+  &--auth-in-widget {
+    width: 190px;
+    margin: 0;
+  }
+
+  &--start-game {
+    width: 100%;
+    background: $bluer-color;
+    color: #fff;
+    font-size: 14px;
+    &:hover {
+      background: $bluer-color-hover;
+    }
+  }
+
+  &--send-message {
+    width: 130px;
+    background: $bluer-color;
+    color: #fff;
+    &:hover {
+      background: $bluer-color-hover;
+    }
+  }
+
+  &--promo-submit {
+    width: 170px;
+    background: $bluer-color;
+    color: #fff;
+    &:hover {
+      background: $bluer-color-hover;
+      color: #fff;
+    }
+  }
+
+  &--save-exchange {
+    width: 140px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    border-radius: 6px;
+    margin-left: 15px;
+    font-size: 14px;
+  }
+
+  &--vk {
+    background: #2a81ed;
+    color: #fff;
+    font-size: 15px;
+    height: 40px;
+    padding: 0 15px;
+    text-decoration: none;
+    line-height: 40px;
+    white-space: nowrap;
+    border-radius: 6px;
+
+    &:hover {
+      background: #358ef6;
+    }
+    .icon {
+      margin-right: 15px;
+      @include mobile {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &--go-add-balance {
+    width: 100%;
+    background: $gold-color;
+    color: #fff;
+    font-size: 18px;
+    &:hover {
+      background: $gold-color-hover;
+    }
+    &:disabled {
+      cursor: not-allowed;
+      background: #41485d!important;
+    }
+  }
+}
+
+.vk-text {
+  @include mobile {
+    display: none;
+  }
+}

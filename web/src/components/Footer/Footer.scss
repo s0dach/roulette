@@ -1,0 +1,26 @@
+.footer {
+  width: 100%;
+  padding: 20px 0;
+  border-top: 1px solid #0f172d;
+
+  &__links-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  &__links-item {
+    list-style: none;
+    margin: 0 12px;
+  }
+
+  &__links-link {
+    text-decoration: underline;
+    font-size: 13px;
+    color: #3c496b;
+    transition: color 0.2s;
+    &:hover {
+      color: #fff;
+    }
+  }
+}

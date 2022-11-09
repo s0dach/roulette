@@ -1,0 +1,11 @@
+{
+  "type": "mysql",
+  "host": "172.22.0.4",
+  "port": 3306,
+  "username": "root",
+  "password": "",
+  "database": "root",
+  "entities": ["entities/**/*.js"],
+  "synchronize": true,
+  "autoLoadEntities": true
+}

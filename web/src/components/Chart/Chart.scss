@@ -1,0 +1,336 @@
+@import "~@/assets/css/colors.scss";
+@import "~@/assets/css/mixins.scss";
+
+.chart {
+  position: relative;
+  width: 100%;
+  height: 230px;
+
+  &--yellow {
+    background: linear-gradient(0deg,#1978e630,#2081e940 10%,#2690e80a 60%,#0a1021);
+
+    .chart__top-value {
+      width: 112px;
+      height: 60px;
+      background: url("~@/assets/images/chart-value-yellow.png") no-repeat;
+    }
+
+    .chart__main-value,
+    .chart__line-value--active {
+      color: $blueq-color;
+    }
+  }
+
+    .graph-svg__main path{
+      stroke: $blueq-color
+    }
+
+
+  &--red {
+    background: linear-gradient(0deg, rgba(32,21,37,1) 0%, rgba(32,21,37,1) 10%, rgba(15,23,44,1) 60%, rgba(15,23,44,1) 100%);
+
+    .chart__top-value {
+      width: 112px;
+      height: 60px;
+      background: url("~@/assets/images/chart-value-red.png") no-repeat;
+    }
+
+    .chart__main-value,
+    .chart__line-value--active{
+      color: $red-color;
+    }
+
+    .graph-svg__main path{
+      stroke: $red-color
+    }
+
+    .graph-point-big {
+      fill: rgba(188, 39, 40, 0.2)
+    }
+
+    .graph-point-small {
+      fill: $red-color
+    }
+  }
+
+  &--mobile {
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+
+    .chart__lines-group {
+      width: 280px;
+      left: 5px;
+    }
+  }
+
+  &__top-value {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -56px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 37px;
+  }
+
+  &__main-value {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 230px;
+    line-height: 230px;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  &__lines-group {
+    position: absolute;
+    left: 20px;
+    bottom: 36px;
+    width: 310px;
+    height: 147px;
+    background: url("~@/assets/images/chart-lines-bg.png") center right no-repeat;
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: block;
+
+    &--1 {
+      bottom: 139px;
+    }
+
+    &--2 {
+      bottom: 90px;
+    }
+
+    &--3 {
+      bottom: 43px;
+    }
+
+    &--4 {
+      bottom: -5px;
+    }
+  }
+
+  &__line-value {
+    color: #3c465e;
+    font-size: 14px;
+  }
+
+  &__animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+
+    &--ak {
+      background: url("~@/assets/animations/ak.gif") no-repeat;
+      background-size: cover;
+      @include mobile {
+        background: url("~@/assets/animations/ak.gif") bottom no-repeat;
+      }
+    }
+
+    &--final {
+      background: url("~@/assets/animations/finall-all.gif") no-repeat;
+      background-size: cover;
+      @include mobile {
+        background: url("~@/assets/animations/finall-all.gif") bottom no-repeat;
+      }
+    }
+
+    &--glass {
+      background: url("~@/assets/animations/glass.gif") no-repeat;
+      background-size: cover;
+      @include mobile {
+        background: url("~@/assets/animations/glass.gif") bottom no-repeat;
+      }
+    }
+
+    &--glass-animation {
+      background-size: cover;
+      opacity: 0.07;
+    }
+
+    &--white-overlay {
+      background: #fff;
+      opacity: 0.07;
+    }
+
+    &--shoots {
+      background: url("~@/assets/animations/shoots.gif") no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+.graph-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #32393c;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.graph-svg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 13.5%;
+  right: 6%;
+  bottom: 11%;
+  background-size: 100% 100%, 999rem 100%;
+  background-repeat: repeat;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(42, 50, 94, 0)), to(#32393c)), repeating-linear-gradient(90deg, rgba(25, 30, 61, 0.3), rgba(25, 30, 61, 0.3) 4.7rem, #32393c 0, #32393c 9.4rem);
+  background-image: linear-gradient(180deg, rgba(42, 50, 94, 0), #32393c), repeating-linear-gradient(90deg, rgba(25, 30, 61, 0.3), rgba(25, 30, 61, 0.3) 4.7rem, #32393c 0, #32393c 9.4rem);
+}
+
+.graph-svg.progress::before {
+  -webkit-animation: graphBg 70s linear infinite;
+  animation: graphBg 70s linear infinite;
+}
+
+.graph-svg__circle {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  opacity: 1;
+  z-index: 4;
+}
+
+.graph-svg.progress .graph-svg__circle,
+.graph-svg.finish .graph-svg__circle {
+  opacity: 1;
+}
+
+.graph-svg__circle-1 {
+  left: 1%;
+  top: 97%;
+}
+
+.graph-svg__circle-2 {
+  left: 91%;
+  top: calc(17% + 84.3% - 3.27rem);
+  z-index: 4;
+}
+
+.graph-svg__circle-2__mobile {
+  left: 95%;
+  top: calc(17% + 84.3% - 3.27rem);
+  z-index: 4;
+}
+
+.graph-svg.progress .graph-svg__runner,
+.graph-svg.finish .graph-svg__runner {
+  opacity: 1;
+}
+
+.graph-svg__counter {
+  position: absolute;
+  top: calc(50% + .5rem);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-size: 3.2rem;
+  font-weight: bold;
+  text-shadow: 0px 1.5rem 1.5rem rgba(0, 0, 0, 0.15);
+  z-index: 5;
+}
+
+.graph-svg__lines {
+  position: absolute;
+  left: 2%;
+  text-align: right;
+  top: 15%;
+  right: 6%;
+  height: 74%;
+  white-space: nowrap;
+  font-weight: 400;
+  font-size: 1.2rem;
+  z-index: 3;
+}
+
+.graph-svg__lines .graph-line {
+  position: absolute;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: #c5cbe2;
+  left: 0;
+  right: 0;
+  padding-right: 90%;
+  font-weight: 500;
+}
+
+.graph-svg__lines .graph-line::after {
+  content: '•';
+  white-space: nowrap;
+  position: absolute;
+  top: 2%;
+  left: 12.5%;
+  letter-spacing: 0.3em;
+  color: #c5cbe2;
+}
+
+.graph-svg__lines .graph-line::before {
+  content: '••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••••';
+  white-space: nowrap;
+  position: absolute;
+  letter-spacing: 0.297em;
+  color: #c5cbe2;
+  top: 2%;
+  left: 10%;
+  right: 0;
+  -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.5)));
+  -webkit-mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+  mask-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.5)));
+  mask-image: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+.graph-svg__lines .graph-line.hidden {
+  display: none;
+}
+
+.graph-svg__main {
+  height: 100%;
+  z-index: 3;
+}
+
+.graph-svg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.graph-svg.progress::after {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(13, 81, 193, 0.2)), to(rgba(13, 81, 193, 0)));
+  background-image: linear-gradient(-90deg, rgba(13, 81, 193, 0.2), rgba(13, 81, 193, 0));
+}
+
+.graph-svg.progress svg {
+  color: #6ac9f3;
+}
+
+.graph-svg.finish::after {
+  background-image: -webkit-gradient(linear, right top, left top, from(rgba(153, 0, 0, 0.2)), to(rgba(153, 0, 0, 0)));
+  background-image: linear-gradient(-90deg, rgba(153, 0, 0, 0.2), rgba(153, 0, 0, 0));
+}
+
+.graph-svg.finish svg {
+  color: #fe4747;
+}

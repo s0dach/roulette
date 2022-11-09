@@ -1,0 +1,124 @@
+@import "~@/assets/css/mixins.scss";
+
+.add-balance-modal {
+  padding: 25px 30px 30px 30px;
+  overflow: auto;
+
+  &__title {
+    font-size: 30px;
+    color: #cba04c;
+    margin: 0 0 45px 0;
+    padding: 0;
+    @include mobile {
+      font-size: 25px;
+      margin-bottom: 25px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  &__label {
+    display: block;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 16px;
+  }
+
+  &__text-input-wrapper {
+    display: block;
+    position: relative;
+    border-radius: 6px;
+    background-color: rgb(10, 16, 32);
+    width: 217px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  &__text-input-currency {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    font-size: 18px;
+    color: #232b3e;
+    width: 30px;
+    height: 50px;
+    line-height: 50px;
+    text-align: right;
+    padding-top: 4px;
+  }
+
+  &__text-input {
+    position: absolute;
+    top: 0;
+    left: 35px;
+    font-size: 18px;
+    color: #c09748;
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 180px;
+    height: 50px;
+    line-height: 50px;
+    padding-top: 8px;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      display: none;
+    }
+  }
+
+  &__form-sum {
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #0f182d;
+  }
+
+  &__pay-methods-list {
+    margin-left: -5px;
+    margin-right: -10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    input {
+      display: none;
+      &:checked {
+        + .add-balance-modal__item-background {
+          background-color: rgb(19, 27, 50);
+          border: 1px solid #cba04c;
+        }
+      }
+    }
+  }
+
+  &__item-background {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: 150px;
+    height: 80px;
+    border-radius: 6px;
+    background-color: rgb(16, 23, 43);
+    cursor: pointer;
+    border: 1px solid rgb(16, 23, 43);
+    transition: color 0.2s, background-color 0.2s;
+    @include mobile {
+      width: 105px;
+      height: 50px;
+    }
+  }
+
+  &__method-logo {
+    max-width: 95%;
+    max-height: 95%;
+    @include mobile {
+      max-width: 70%;
+      max-height: 60%;
+    }
+  }
+}

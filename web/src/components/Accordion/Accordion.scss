@@ -1,0 +1,69 @@
+.accordion {
+  &__item {
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 60px;
+    border-radius: 12px;
+    background-color: rgb(12, 19, 37);
+    color: #414e70;
+    font-size: 15px;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s;
+    margin: 0;
+    padding: 0 45px 0 30px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      margin-top: -4px;
+      right: 24px;
+      width: 13px;
+      height: 8px;
+      display: block;
+      background: url("~@/assets/icons/accordion-arrow-down.png") no-repeat;
+      transition: transform 0.2s;
+    }
+
+    &--active {
+      color: #00acfab8;
+      border-radius: 12px 12px 0 0;
+      &:after {
+        background: url("~@/assets/icons/accordion-arrow-bottom-active.png") no-repeat;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__text {
+    word-break: break-word;
+    background: #0f172c;
+    color: #fff;
+    font-size: 14px;
+    line-height: 21px;
+    border-radius: 0 0 12px 12px;
+    padding: 25px 10px 20px 30px;
+    a {
+      text-decoration: underline;
+      color: #cba04c;
+    }
+  }
+}
+
+.slide-fade-enter-active {
+  transition: all .8s ease;
+}
+.slide-fade-leave-active {
+  transition: all .3s ease;
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateY(-10px);
+  opacity: 0;
+}

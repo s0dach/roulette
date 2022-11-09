@@ -1,0 +1,336 @@
+@import "~@/assets/css/colors.scss";
+
+.game {
+  padding-top: 5px;
+  &__row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 10px 0 15px 0;
+
+    &--border-top {
+      border-top: 1px solid #0f172c;
+    }
+  }
+
+  &__main-column {
+    width: 100%;
+    padding-top: 5px;
+    &--padding {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    &--padding__bottom {
+      padding-bottom: 20px;
+    }
+    &--padding__top {
+      padding-top: 20px;
+    }
+    &--fixed-width {
+      width: 172px;
+      flex-shrink: 0;
+    }
+    &--mobile {
+      width: 46%;
+    }
+  }
+
+  &__side-column {
+    width: 220px;
+    border-left: 1px solid #0f182d;
+    padding: 5px 25px 0 25px;
+    flex-shrink: 0;
+    &--mobile {
+      width: 50%;
+      padding-left: 0;
+      padding-right: 0;
+      border: none;
+    }
+  }
+
+  &__items-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__item {
+    width: 106px;
+    height: 124px;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px 0 rgba(8, 13, 27, 0.71);
+    margin: 0 15px;
+    &--consumer {
+      background: $gr-consumer;
+    }
+
+    &--industrial {
+      background: $gr-industrial;
+    }
+
+    &--mil-spec {
+      background: $gr-mil-spec;
+    }
+
+    &--restricted {
+      background: $gr-restricted;
+    }
+
+    &--classified {
+      background: $gr-classified;
+    }
+
+    &--covert {
+      background: $gr-covert;
+    }
+
+    &--exceedingly-rare {
+      background: $gr-exceedingly-rare;
+    }
+
+    &--contraband {
+      background: $gr-contraband;
+    }
+  }
+
+  &__item-plus {
+    display: flex;
+    height: 100%;
+    align-self: center;
+    text-align: center;
+    font-size: 33px;
+  }
+
+  &__item-pic-wrapper {
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__item-pic {
+    width: 100%;
+    max-height: 100px;
+  }
+
+  &__item-price {
+    display: block;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+  }
+
+  &__title-label {
+    display: block;
+    color: #3c465e;
+    font-size: 13px;
+    padding-bottom: 15px;
+  }
+
+  &__stats {
+    position: relative;
+    margin-top: 10px;
+    width: 167px;
+    height: 40px;
+    background: url("~@/assets/images/game-stats-bg.png") no-repeat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__stats-item {
+    width: 50%;
+    text-align: center;
+  }
+
+  &__auto-output {
+    display: flex;
+    flex-shrink: 0;
+    width: 130px;
+    height: 40px;
+    border: 2px solid rgb(32, 46, 80);
+    border-radius: 6px;
+    color: #fff;
+    &--mobile {
+      width: 100%;
+    }
+  }
+
+  &__auto-output-wrapper {
+    width: 160px;
+    display: flex;
+    flex-flow: row nowrap;
+    &--mobile {
+      width: 100%;
+    }
+  }
+
+  &__auto-output-divider {
+    width: 1px;
+    height: 40px;
+    background: #0f182d;
+    margin-left: 20px;
+  }
+
+  &__auto-output-input {
+    width: 80px;
+    height: 36px;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    text-align: right;
+    margin-right: 3px;
+    background: transparent;
+    &--mobile {
+      width: 100%;
+    }
+  }
+
+  &__auto-output-x {
+    color: #3c465e;
+    line-height: 38px;
+    &--mobile {
+      width: 70px;
+    }
+  }
+
+  &__pre-select-group {
+    display: flex;
+  }
+
+  &__pre-select-button {
+    width: 85px;
+    height: 40px;
+    flex-shrink: 0;
+    cursor: pointer;
+    margin-right: 10px;
+    &:hover {
+      .game__pre-select-content {
+        background: #10182d;
+      }
+    }
+  }
+
+  &__pre-select-radio {
+    display: none;
+    + .game__pre-select-content{
+      display: block;
+      width: 85px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      border: 1px solid rgb(20, 30, 55);
+      border-radius: 6px;
+      transition: background-color 0.2s;
+    }
+
+    &:checked + .game__pre-select-content{
+      background: rgb(20, 30, 55);
+    }
+  }
+
+  &__pre-select-x {
+    color: #3c465e;
+    display: inline-block;
+    margin-left: 3px;
+  }
+
+  &__bets-timer {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 57px;
+    line-height: 57px;
+    font-size: 16px;
+    background-image: repeating-linear-gradient(-45deg,#1877e5c7,#3498f1b8 25px,#3da2f4 0,#0081ece0 50px);
+    background-size: 150% 100%;
+    color: #fff;
+    padding: 0 25px;
+    border-radius: 0 0 10px 10px;
+    &--animated {
+      -webkit-animation:progress 2s linear infinite;
+      -moz-animation:progress 2s linear infinite;
+      animation: progress 2s linear infinite;
+    }
+    &--mobile {
+      padding-left: 5px;
+      padding-right: 5px;
+      white-space: nowrap;
+      width: calc(100% + 20px);
+      margin-left: -10px;
+    }
+  }
+
+  &__bets-timer-column {
+    width: 33.33%;
+    &--center {
+      text-align: center;
+    }
+
+    &--right {
+      text-align: right;
+    }
+  }
+
+  &__bets-timer-text {
+    &--mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__bets-timer-gun-value {
+    &--mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__bets-refresh-value {
+    &--mobile {
+      font-size: 14px;
+    }
+  }
+}
+
+.threshold {
+  width: 100px;
+  display: inline-block;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  height: 40px;
+  line-height: 40px;
+  white-space: nowrap;
+  font-size: 12px;
+  color: #41485d;
+  background-color: #0e1529;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.05s, color 0.05s;
+  margin-right: 10px;
+}
+
+@-webkit-keyframes progress{
+  0% {
+    background-position: -70px 0px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@-moz-keyframes progress{
+  0% {
+    background-position: -70px 0px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes progress{
+  0% {
+    background-position: -70px 0px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

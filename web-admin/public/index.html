@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js?v=<%= new Date().toISOString() %>"></script>
+    <script>
+      WebFont.load({
+        google: {
+          "families": ["Montserrat:300,400,500,600,700"]
+        },
+        active: function() {
+          sessionStorage.fonts = true;
+        }
+      });
+    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="/dash/css/perfect-scrollbar.css" rel="stylesheet" type="text/css" />
+    <link href="/dash/css/line-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="/dash/css/flaticon.css" rel="stylesheet" type="text/css" />
+    <link href="/dash/css/flaticon2.css" rel="stylesheet" type="text/css" />
+    <link href="/dash/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="/css/wnoty.css" rel="stylesheet" />
+    <link href="/dash/css/datatables.bundle.min.css" rel="stylesheet" type="text/css" />
+    <link href="/dash/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+
+    <script src="/dash/js/jquery.min.js?v=<%= new Date().toISOString() %>" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js?v=<%= new Date().toISOString() %>"></script>
+    <script src="/js/wnoty.js?v=<%= new Date().toISOString() %>" type="text/javascript"></script>
+    <script src="/dash/js/popper.min.js?v=<%= new Date().toISOString() %>" type="text/javascript"></script>
+    <script src="/dash/js/bootstrap.min.js?v=<%= new Date().toISOString() %>" type="text/javascript"></script>
+    <script src="/dash/js/bootstrap-datetimepicker.min.js?v=<%= new Date().toISOString() %>" type="text/javascript"></script>
+    <script src="/dash/js/bootstrap-datetimepicker.ru.js?v=<%= new Date().toISOString() %>" type="text/javascript"></script>
+    <script src="/dash/js/bootstrap-datetimepicker.js?v=<%= new Date().toISOString() %>" type="text/javascript"></script>
+    <script src="/dash/js/perfect-scrollbar.min.js?v=<%= new Date().toISOString() %>" type="text/javascript"></script>
+    <script src="/dash/js/scripts.bundle.js?v=<%= new Date().toISOString() %>" type="text/javascript"></script>
+    <script src="/dash/js/datatables.bundle.min.js?v=<%= new Date().toISOString() %>" type="text/javascript"></script>
+    <script src="/dash/js/dtables.js?v=<%= new Date().toISOString() %>" type="text/javascript"></script>
+    <script type="text/javascript" src="/js/chart.min.js?v=<%= new Date().toISOString() %>"></script>
+    <link rel="stylesheet" href="/css/select2.css">
+    <link rel="stylesheet" href="/css/select2-bootstrap4.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js?v=<%= new Date().toISOString() %>"></script>
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body class="kt-header--fixed kt-header-mobile--fixed kt-subheader--fixed kt-subheader--enabled kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading">
+<noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+</noscript>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
+</html>

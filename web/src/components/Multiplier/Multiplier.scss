@@ -1,0 +1,72 @@
+@import "~@/assets/css/colors.scss";
+@import "~@/assets/css/mixins.scss";
+
+.multiplier-wrapper {
+  position: relative;
+  @include mobile {
+    width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &__shadow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 20px;
+    height: 30px;
+    background: linear-gradient(90deg, rgba(12,19,37,0) 0%, rgba(12,19,37,1) 100%);
+  }
+}
+
+.multiplier {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  overflow: scroll;
+  margin-bottom: 40px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &__item{
+    display: inline-flex;
+    margin-right: 5px;
+  }
+
+  &__link {
+    font-size: 14px;
+    color: #fff;
+    background: #383e4f;
+    border-bottom: 3px solid #474d5e;
+    transition: background-color 0.2s;
+    border-radius: 6px;
+    cursor: pointer;
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+
+    &--green {
+      background: #0093f2b8;
+      border-bottom: 3px solid #0073e8bf;
+    }
+
+    &--violet {
+      background: #641fa0;
+      border-bottom: 3px solid #8224ca;
+    }
+
+    &--red {
+      background: #a52f34;
+      border-bottom: 3px solid #cc3738;
+    }
+
+    &--orange {
+      background: #dbb14d;
+      border-bottom: 3px solid #dbb14d;
+    }
+  }
+}

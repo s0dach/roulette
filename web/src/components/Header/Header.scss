@@ -1,0 +1,303 @@
+@import "~@/assets/css/colors";
+
+.header {
+  width: 100%;
+  border-bottom: 1px solid #0f172d;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  &__logo {
+    display: flex;
+    align-items: baseline;
+    margin-top: 9px;
+    transition: opacity 0.2s;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__logo-image {
+
+  }
+
+  &__menu {
+    display: flex;
+    &--mobile {
+      flex-flow: column nowrap;
+    }
+  }
+
+  &__menu-item {
+    list-style: none;
+    margin-right: 45px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &--mobile {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__menu-link {
+    font-size: 16px;
+    color: #fff;
+    text-decoration: none;
+    &--mobile {
+      font-size: 18px;
+    }
+
+    .menu-beta {
+       margin-left: 6px;
+       font-size: .6rem;
+       border-radius: 3px;
+       padding: 2px 4px 1px;
+       color: #fff;
+       background-color: #246fb9;
+       opacity: .9;	
+    }
+
+    .icon {
+      margin-right: 2px;
+      &--home {
+        top: -2px;
+      }
+    }
+
+    &:hover {
+      .icon--home {
+        background: url("~@/assets/icons/icon-home-hover.png") center no-repeat;
+      }
+
+      .icon--history {
+        background: url("~@/assets/icons/icon-history-hover.png") center no-repeat;
+      }
+
+      .icon--support {
+        background: url("~@/assets/icons/icon-support-hover.png") center no-repeat;
+      }
+    }
+  }
+
+  &__menu-link.router-link-exact-active {
+    .icon--home {
+      background: url("~@/assets/icons/icon-home-hover.png") center no-repeat;
+    }
+
+    .icon--history {
+      background: url("~@/assets/icons/icon-history-hover.png") center no-repeat;
+    }
+
+    .icon--support {
+      background: url("~@/assets/icons/icon-support-hover.png") center no-repeat;
+    }
+  }
+
+  &__middle-content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__socials-meta {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  &__profile {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    &--mobile {
+      flex-flow: column nowrap;
+    }
+  }
+
+  &__profile-content {
+    display: flex;
+    flex-flow: row nowrap;
+    &--mobile {
+      width: 100%;
+      justify-content: space-between;
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #0f182d;
+    }
+  }
+
+  &__profile-user {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    cursor: pointer;
+  }
+
+  &__profile-user-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  &__profile-balance {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    margin-right: 25px;
+  }
+
+  &__profile-balance-title {
+    font-size: 10px;
+    color: #41485d;
+    &--mobile {
+      font-size: 12px;
+    }
+  }
+
+  &__profile-balance-value {
+    font-size: 13px;
+    color: #19af60;
+    &--mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    margin-right: 30px;
+  }
+
+  &__socials-item {
+    list-style: none;
+    margin-right: 15px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__socials-link {
+    display: block;
+    width: 20px;
+    height: 40px;
+    cursor: pointer;
+    &--tw {
+      background: url("~@/assets/icons/icon-tw.png") center no-repeat;
+      &:hover {
+        background: url("~@/assets/icons/icon-tw-hover.png") center no-repeat;
+      }
+    }
+
+    &--vk {
+      background: url("~@/assets/icons/icon-vk.png") center no-repeat;
+      &:hover {
+        background: url("~@/assets/icons/icon-vk-hover.png") center no-repeat;
+      }
+    }
+
+    &--od {
+      background: url("~@/assets/icons/icon-od.png") center no-repeat;
+      &:hover {
+        background: url("~@/assets/icons/icon-od-hover.png") center no-repeat;
+      }
+    }
+  }
+}
+
+.header-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 15px;
+  background: #0c1325;
+  z-index: 15;
+  &--menu-opened {
+    min-height: 100%;
+    height: 100%;
+    height: 100vh;
+  }
+
+  &__top {
+    position: relative;
+    height: 75px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    position: relative;
+    height: 18px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__trigger {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 26px;
+    height: 14px;
+    border: none;
+    outline: none;
+    background: url("~@/assets/icons/icon-burger.png") no-repeat;
+  }
+
+  &__body {
+    width: 100%;
+    max-width: 385px;
+  }
+
+  &__user {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    border-bottom: 1px solid #0f182d;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+  }
+
+  &__user-name {
+    max-width: 160px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    color: #fff;
+    padding-bottom: 5px;
+  }
+
+  &__user-status {
+    font-size: 14px;
+    &--green {
+      color: $green-color;
+    }
+
+    &--red {
+      color: $red-color;
+    }
+  }
+
+  &__user-image {
+    width: 48px;
+    height: 48px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    border-radius: 12px;
+  }
+
+  &__meta {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+  }
+
+  &__user-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-items: center;
+  }
+}

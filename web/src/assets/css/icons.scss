@@ -1,0 +1,154 @@
+.icon {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+
+  &--home {
+    width: 18px;
+    height: 16px;
+    background: url("~@/assets/icons/icon-home.png") center no-repeat;
+  }
+
+  &--history {
+    width: 16px;
+    height: 16px;
+    background: url("~@/assets/icons/icon-history.png") center no-repeat;
+  }
+
+  &--support {
+    width: 18px;
+    height: 10px;
+    background: url("~@/assets/icons/icon-support.png") center no-repeat;
+  }
+
+  &--pay {
+    width: 16px;
+    height: 13px;
+    background: url("~@/assets/icons/icon-pay.png") center no-repeat;
+  }
+
+  &--logout {
+    width: 15px;
+    height: 15px;
+    background: url("~@/assets/icons/icon-logout.png") center no-repeat;
+  }
+
+  &--exchange {
+    width: 14px;
+    height: 15px;
+    background: url("~@/assets/icons/icon-exchange.png") center no-repeat;
+  }
+
+  &--pick {
+    width: 22px;
+    height: 19px;
+    background: url("~@/assets/icons/icon-pick.png") center no-repeat;
+  }
+
+  &--steam {
+    width: 18px;
+    height: 18px;
+    background: url("~@/assets/icons/icon-steam.png") center no-repeat;
+  }
+
+  &--gun {
+    width: 90px;
+    height: 57px;
+    background: url("~@/assets/icons/icon-gun.png") center -8px no-repeat;
+    vertical-align: top;
+    margin-right: -10px;
+  }
+
+  &--refresh {
+    width: 20px;
+    height: 20px;
+    background: url("~@/assets/icons/icon-refresh.png") center no-repeat;
+    margin-right: 10px;
+  }
+
+  &--waiting {
+    width: 12px;
+    height: 12px;
+    background: url("~@/assets/icons/icon-waiting.png") center no-repeat;
+  }
+
+  &--green-arrow-top {
+    width: 12px;
+    height: 8px;
+    background: url("~@/assets/icons/icon-green-top.png") center no-repeat;
+  }
+
+  &--item-selected {
+    width: 17px;
+    height: 17px;
+    background: url("~@/assets/icons/icon-item-selected.png") center no-repeat;
+  }
+
+  &--chatbox-count {
+    width: 18px;
+    height: 10px;
+    background: url("~@/assets/icons/icon-chatbox-count.png") center no-repeat;
+  }
+
+  &--qr {
+    width: 16px;
+    height: 16px;
+    background: url("~@/assets/icons/icon-qr.png") no-repeat;
+  }
+
+  &--exchange-gold {
+    width: 14px;
+    height: 16px;
+    background: url("~@/assets/icons/icon-exchange-gold.png") no-repeat;
+  }
+
+  &--referral {
+    width: 16px;
+    height: 16px;
+    background: url("~@/assets/icons/icon-referral.png") no-repeat;
+  }
+
+  &--input-link {
+    width: 14px;
+    height: 14px;
+    background: url("~@/assets/icons/icon-input-link.png") no-repeat;
+  }
+
+  &--error {
+    width: 8px;
+    height: 7px;
+    background: url("~@/assets/icons/icon-error.png") no-repeat;
+  }
+
+  &--pending {
+    width: 12px;
+    height: 12px;
+    background: url("~@/assets/icons/icon-pending.png") no-repeat;
+    animation: spin 4s infinite linear;
+  }
+
+  &--success {
+    width: 11px;
+    height: 8px;
+    background: url("~@/assets/icons/icon-success.png") no-repeat;
+  }
+
+  &--vk-button {
+    width: 19px;
+    height: 11px;
+    background: url("~@/assets/icons/icon-vk-button.png") no-repeat;
+  }
+}
+
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(360deg); }
+  to { -moz-transform: rotate(0deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(360deg); }
+  to { -webkit-transform: rotate(0deg); }
+}
+@keyframes spin {
+  from {transform:rotate(360deg);}
+  to {transform:rotate(0deg);}
+}
